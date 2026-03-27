@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Pond</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0fdf4; /* Light mint background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .pond {
+            position: relative;
+            width: 80vw;
+            height: 60vh;
+            background-color: #bae6fd; /* Pond blue */
+            border-radius: 50% 40% 60% 30%; /* Organic pond shape */
+            box-shadow: inset 0 20px 50px rgba(0,0,0,0.1), 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 8px solid #fef3c7; /* Sandy edge */
+        }
+
+        .duck {
+            position: absolute;
+            font-size: 3rem;
+            cursor: pointer;
+            user-select: none;
+            top: 50%;
+            left: -50px;
+            animation: swim 8s linear infinite;
+        }
+
+        /* The swimming motion */
+        @keyframes swim {
+            0% {
+                transform: translate(0, -10px) scaleX(1);
+                left: -10%;
+            }
+            45% {
+                transform: translate(40vw, 20px) scaleX(1);
+            }
+            50% {
+                transform: translate(40vw, 20px) scaleX(-1); /* Flip the duck */
+            }
+            95% {
+                transform: translate(0, -10px) scaleX(-1);
+            }
+            100% {
+                transform: translate(0, -10px) scaleX(1);
+                left: -10%;
+            }
+        }
+
+        .reeds {
+            position: absolute;
+            bottom: 10%;
+            left: 20%;
+            font-size: 2rem;
+            opacity: 0.7;
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            color: #0369a1;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Just a peaceful pond.</h1>
+
+    <div class="pond">
+        <div class="reeds">🌿🌾</div>
+        <div class="duck">🦆</div>
+    </div>
+
+</body>
+</html>
